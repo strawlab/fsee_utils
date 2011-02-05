@@ -103,7 +103,7 @@ class Client:
     
     def config_use_white_arena(self):
         ''' Tweak the OSG model such that the arena is displayed in white. 
-            (the posts are the only distinguishable entities. 
+            (the posts are the only distinguishable entities). 
             Call this before config_stimulus_xml().
         '''
         self.config('osg_params', {'white_arena': True})

@@ -6,7 +6,6 @@ def main():
     
     cp = ClientProcess('rfsee_server')
     
-    # cp.config_stimulus_xml('/home/andrea/landing/20080626/4postsA.xml')
     cp.config_stimulus_xml(example_stim_xml)
     
     # 10x slower

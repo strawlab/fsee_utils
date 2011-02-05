@@ -191,11 +191,11 @@ def main():
         
     except SystemExit:
         pass
-    except IOError:
-        import traceback
-        s = "\n".join(traceback.format_tb(sys.exc_info()[2]));
+    except IOError as e:
+        # import traceback
+        # s = "\n".join(traceback.format_tb(sys.exc_info()[2]));
         #    sys.stderr.write(s)
-        exit_with_error("Unexpected error: \n%s" % s)
+        exit_with_error("Communication error: %s" % s)
             
 if __name__ == '__main__':
     main()
