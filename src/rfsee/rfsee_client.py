@@ -33,17 +33,20 @@ class Client:
             return [x[0], x[1], x[2]]
         
         def simple_matrix(x):
-            return [ [ x[0, 0], x[0, 1], x[0, 2]],
-                     [ x[1, 0], x[1, 1], x[1, 2]],
-                     [ x[2, 0], x[2, 1], x[2, 2]]  ]
-        
+            if type(x) is not list:
+                x = x.tolist()
+            return [ [ x[0][0], x[0][1], x[0][2]],
+                     [ x[1][0], x[1][1], x[1][2]],
+                     [ x[2][0], x[2][1], x[2][2]]  ]
+            
+                     
 
         self.write_json({
             'method': 'render',
             'position': simple(position),
             'attitude': simple_matrix(attitude),
             'linear_velocity_body': simple(linear_velocity_body),
-            'angular_velocity_body': simple(angular_velocity_body),
+            'angular_velocity_body': angular_velocity_body,
         });
         # FIXME ADD: BINARY MODE
         return self.expect_ok_status()
